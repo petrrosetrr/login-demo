@@ -13,7 +13,7 @@ const App: React.FC = () => {
 
     return (
         <div className={styles.main}>
-            <Router basename="/login-demo">
+            <Router>
                 <Header /> {
                 loading ?
                     <p>Loading...</p>
