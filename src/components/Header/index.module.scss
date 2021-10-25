@@ -29,10 +29,9 @@
   }
 
   .link {
-    cursor: pointer;
-
     &.active {
-      text-decoration: underline;
+      opacity: .5;
+      text-decoration: none;
       pointer-events: none;
     }
   }
@@ -41,6 +40,9 @@
     text-decoration: underline;
     padding: 0;
     margin: 0;
+    margin-left: auto;
+  }
+  .email {
     margin-left: auto;
   }
 }

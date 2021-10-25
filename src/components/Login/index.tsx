@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from '../Form';
 import styles from '../ChangePassword/index.module.scss';
-import Input from '../Input';
+import Input, {InputPassword} from '../Input';
 import Button from '../Button';
 import {loginUser} from '../../redux/userSlice';
 import {useAppDispatch} from '../../redux/hooks';
@@ -20,8 +20,8 @@ const Login = () => {
 
     return (
         <Form onSubmit={submitHandler} className={styles.main}>
-            <Input label={'Email'} type={'email'} name={'email'}/>
-            <Input label={'Password'} type={'password'} name={'password'}/>
+            <Input label={'Email'} type={'email'} name={'email'} placeholder={'test@test.com'}/>
+            <InputPassword label={'Password'} name={'password'}/>
             <Button type="submit">Submit</Button>
         </Form>
     );

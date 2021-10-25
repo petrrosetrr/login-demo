@@ -31,9 +31,11 @@ const Header = () => {
                     }
                 </nav>
                 {
-                    loggedIn && <p>Logged in as {email}
-                        <button onClick={logOutHandler}>Logout</button>
-                    </p>
+                    loggedIn &&
+                    <>
+                        <p className={styles.email}>Logged in as {email}</p>
+                        <button className={styles.link} onClick={logOutHandler}>Logout</button>
+                    </>
                 }
             </div>
         </div>

@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import {changePassword} from '../../redux/userSlice';
 import Form from '../Form';
-import Input from '../Input';
+import Input, {InputPassword} from '../Input';
 import Button from '../Button';
 
 const ChangePassword = () => {
@@ -19,9 +19,9 @@ const ChangePassword = () => {
 
     return (
         <Form onSubmit={submitHandler} className={styles.main}>
-            <Input label={'Current password'} type={'password'} name={'currentPassword'}/>
-            <Input label={'New password'} type={'password'} name={'newPassword'}/>
-            <Input label={'Repeat password'} type={'password'} name={'repeatPassword'}/>
+            <InputPassword label={'Current password'} name={'currentPassword'}/>
+            <InputPassword label={'New password'} name={'newPassword'}/>
+            <InputPassword label={'Repeat password'} name={'repeatPassword'}/>
             <Button type="submit">Submit</Button>
         </Form>
     );

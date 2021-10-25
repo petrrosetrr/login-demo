@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../ChangePassword/index.module.scss';
 import Form from '../Form';
-import Input from '../Input';
+import Input, {InputPassword} from '../Input';
 import Button from '../Button';
 import {useAppDispatch} from '../../redux/hooks';
 import {loginUser} from '../../redux/userSlice';
@@ -20,8 +20,8 @@ const Register = () => {
 
     return (
         <Form onSubmit={submitHandler} className={styles.main}>
-            <Input label={'Email'} type={'email'} name={'email'}/>
-            <Input label={'Password'} type={'password'} name={'password'}/>
+            <Input label={'Email'} type={'email'} name={'email'} placeholder={'test@test.com'}/>
+            <InputPassword label={'Password'} />
             <Button type="submit">Submit</Button>
         </Form>
     );
