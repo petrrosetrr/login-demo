@@ -22,13 +22,21 @@ const App: React.FC = () => {
                         {
                             loggedIn ?
                                 <>
-                                    <Route exact path="/"> <Home/> </Route> <Route exact path="/change-password">
-                                    <ChangePassword/> </Route> <Redirect to="/"/>
+                                    <Route exact path="/">
+                                        <Home/>
+                                    </Route>
+                                    <Route exact path="/change-password">
+                                        <ChangePassword/>
+                                    </Route>
+                                    <Redirect to="/"/>
                                 </>
                                 :
                                 <>
-                                    <Route exact path="/login"> <Login/> </Route> <Route exact path="/register">
-                                    <Register/> </Route> <Redirect to="/login"/>
+                                    <Route exact path="/login"> <Login/> </Route>
+                                    <Route exact path="/register">
+                                        <Register/>
+                                    </Route>
+                                    <Redirect to="/login"/>
                                 </>
                         }
                     </Switch>
