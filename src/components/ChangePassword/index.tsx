@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import {changePassword} from '../../redux/userSlice';
 import Form from '../Form';
-import Input, {InputPassword} from '../Input';
+import {InputPassword} from '../Input';
 import Button from '../Button';
 
 const ChangePassword = () => {
@@ -12,8 +12,13 @@ const ChangePassword = () => {
 
     const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (e.currentTarget.currentPassword === password) {
-            dispatch(changePassword(e.currentTarget.newPassword));
+        const currentPass = e.currentTarget.currentPassword.value
+        const newPass = e.currentTarget.newPassword.value
+        const repeatPass = e.currentTarget.repeatPassword.value
+
+        if (currentPass === password
+            && newPass === repeatPass) {
+            dispatch(changePassword(newPass));
         }
     };
 
